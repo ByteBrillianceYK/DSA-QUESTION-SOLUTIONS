@@ -54,3 +54,32 @@ public:
         
     }
 };
+
+// 3. using switch case instead of if else
+class Solution {
+public:
+    void sortColors(vector<int>& nums) {
+        int low=0,pointer=0,high=nums.size()-1;
+        
+        while(pointer<=high){
+            switch(nums[pointer]){
+                case 0:
+                    swap(nums[pointer],nums[low]);
+                    low++;
+                    pointer++;
+                    break;
+                case 1:
+                    pointer++;
+                    break;
+                case 2:
+                    swap(nums[pointer],nums[high]);
+                    high--;
+                    break;
+
+            }
+        }
+        
+        
+        
+    }
+};
